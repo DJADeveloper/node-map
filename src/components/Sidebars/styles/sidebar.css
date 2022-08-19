@@ -1,0 +1,37 @@
+.right-sideMenu {
+  background-color: #111214;
+  max-width: 256px;
+
+  overflow-y: hidden;
+  height: 100vh;
+  /* padding: em(50) em(40) em(35); */
+  color: white;
+
+  flex: 0.3;
+  border-left: 2px solid grey;
+  padding: 30px;
+}
+
+.left-sideMenu {
+  background-color: #111214;
+
+  max-width: 256px;
+
+  overflow-y: auto;
+
+  height: 100vh;
+  /* padding: em(50) em(40) em(35); */
+  color: white;
+
+  flex: 0.3;
+  border-right: 2px solid grey;
+  padding: 30px;
+}
+
+.node_typeRow {
+  display: flex;
+  justify-content: space-between;
+  background-color: green;
+  margin-top: 20px;
+  margin-bottom: auto;
+}

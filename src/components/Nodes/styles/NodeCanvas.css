@@ -1,0 +1,7 @@
+.canvas {
+  display: flex;
+  flex: 0.8;
+  background-color: #111214;
+  padding: 30px;
+  color: white;
+}
