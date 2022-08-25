@@ -1,0 +1,10 @@
+.container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 200px;
+  bottom: 0;
+  padding: 10px;
+  box-sizing: border-box;
+  z-index: 10;
+}

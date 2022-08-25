@@ -1,6 +1,6 @@
 .right-sideMenu {
   background-color: #111214;
-  max-width: 256px;
+  max-width: 300px;
 
   overflow-y: hidden;
   height: 100vh;
@@ -15,7 +15,7 @@
 .left-sideMenu {
   background-color: #111214;
 
-  max-width: 256px;
+  max-width: 300px;
 
   overflow-y: auto;
 

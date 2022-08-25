@@ -1,18 +1,15 @@
 import "./App.css";
+import { NodeProvider } from "./components/Context/NodeRepository";
 import Navbar from "./components/Navbar/Navbar";
-import LeftSidebar from "./components/Sidebars/LeftSidebar";
-import RightSidebar from "./components/Sidebars/RightSidebar";
-import NodeCanvas from "./components/Nodes/NodeCanvas/NodeCanvas";
+import Home from "./components/View/Home";
 
 function App() {
   return (
     <>
-      <Navbar />
-      <div className="d-flex">
-        <LeftSidebar />
-        <NodeCanvas />
-        <RightSidebar />
-      </div>
+      <NodeProvider>
+        <Navbar />
+        <Home />
+      </NodeProvider>
     </>
   );
 }
