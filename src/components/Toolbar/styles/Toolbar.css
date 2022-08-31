@@ -1,42 +1,40 @@
 .container {
-    position: absolute;
-    padding: 10px 0;
-    display: flex;
+  position: absolute;
+  padding: 10px 0;
+  display: flex;
 }
 
-.button{
-    padding: 3px;
+.button {
+  padding: 3px;
 }
 
 .left {
-    left: 0;
+  left: 0;
 }
 
 .right {
-    right: 0;
-    left: auto;
-    justify-content: flex-end;
+  right: 0;
+  left: auto;
+  justify-content: flex-end;
 }
 
 .top {
-    top: 0;
+  top: 0;
 }
 
-.bottom{
-    bottom: 0;
-    top: auto;
-    justify-content: flex-end;
+.bottom {
+  bottom: 0;
+  top: auto;
+  justify-content: flex-end;
 }
 
-.horizontal{
-   
-    height: 42px;
-    flex-flow: row;
+.horizontal {
+  height: 42px;
+  flex-flow: row;
 }
 
-.vertical{
-    height: auto;
-    width: 42px;
-    flex-flow: column;
+.vertical {
+  height: auto;
+  width: 42px;
+  flex-flow: column;
 }
-

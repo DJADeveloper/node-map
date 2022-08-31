@@ -1,16 +1,16 @@
 import React from "react";
 import Icon from "../Icon/Icon";
-import icons from "../Icon/Icons";
+
 import "../Toolbar/styles/Toolbar.css";
 
-const Toolbar = () => {
-  const iconClicked = () => {
-    console.log("Icon clicked");
-  };
+const Toolbar = (props) => {
   return (
-    <div className="ZoomMenu d-flex flex-column align-items-end  ">
-      <Icon icon={icons.zoomIn} onClick={iconClicked} cn="button left" />
-      <Icon icon={icons.zoomOut} onClick={iconClicked} cn="button left" />
+    <div className={props.cn}>
+      {props.list.map((item) => (
+        <div className="button">
+          <Icon icon={item.name} onClick={item.onClick} />
+        </div>
+      ))}
     </div>
   );
 };

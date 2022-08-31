@@ -7,7 +7,7 @@ const RightSidebar = () => {
   return (
     <div className="right-sideMenu">
       <NodeInputForm />
-      <NodeDetails />
+      {/* <NodeDetails /> */}
     </div>
   );
 };

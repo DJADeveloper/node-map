@@ -1,4 +1,5 @@
-import * as React from "react";
+import React, { useContext } from "react";
+
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -11,11 +12,16 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormGroup from "@mui/material/FormGroup";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
+import { Link } from "react-router-dom";
 import "../Navbar/Navbar.css";
+import Button from "../Buttons/Button";
+import { NodeContext } from "../Context/NodeRepository";
 
-export default function Navbar() {
+export default function Navbar(props) {
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const { addNode } = useContext(NodeContext);
 
   const handleChange = (event) => {
     setAuth(event.target.checked);
@@ -57,6 +63,17 @@ export default function Navbar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Photos
           </Typography>
+          <Link to="/">Home</Link>
+
+          <Button cn="bg-primary text-light mx-3 px-5">
+            <Link
+              to="/Node/"
+              className="text-light text-decoration-none"
+              onClick={addNode}
+            >
+              New
+            </Link>
+          </Button>
           {auth && (
             <div>
               <IconButton
@@ -69,6 +86,7 @@ export default function Navbar() {
               >
                 <AccountCircle />
               </IconButton>
+
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorEl}

@@ -4,6 +4,24 @@ export const NodeContext = createContext("");
 
 export const NodeProvider = ({ children }) => {
   const [nodeList, setNodeList] = useState([]);
+  const [id, setId] = useState(1);
+
+  const addNode = () => {
+    repository.save({
+      name: "Node!",
+      level: 0,
+      parentId: null,
+    });
+
+    setNodeList(repository.getList({ level: 0 }));
+    console.log(nodeList);
+  };
+
+  const deleteNode = (id) => {
+    repository.delete(id);
+    setNodeList(repository.getList({ level: 0 }));
+    console.log("Delete was clicked");
+  };
 
   const repository = {
     _nextId: () => {
@@ -81,7 +99,7 @@ export const NodeProvider = ({ children }) => {
       console.log(data);
       const list = JSON.parse(data);
       console.log(list);
-      setNodeList(list);
+      // setNodeList(list);
       const result = list.filter((x) => x[key] === value);
       return result;
     },
@@ -96,7 +114,17 @@ export const NodeProvider = ({ children }) => {
     },
   };
   return (
-    <NodeContext.Provider value={{ repository, nodeList, setNodeList }}>
+    <NodeContext.Provider
+      value={{
+        repository,
+        nodeList,
+        setNodeList,
+        addNode,
+        deleteNode,
+        id,
+        setId,
+      }}
+    >
       {children}
     </NodeContext.Provider>
   );
